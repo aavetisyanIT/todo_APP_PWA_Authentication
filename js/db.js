@@ -9,11 +9,11 @@ db.enablePersistence().catch((err) => {
 	}
 });
 
+const todoDB = db.collection('todos');
+
 //real-time listner
-db.collection('todos').onSnapshot((snapshot) => {
-	//console.log(snapshot.docChanges());
+todoDB.onSnapshot((snapshot) => {
 	snapshot.docChanges().forEach((change) => {
-		//console.log(change, change.doc.data(), change.doc.id);
 		if (change.type === 'added') {
 			//add the document data to the web page
 			renderTodo(change.doc.data(), change.doc.id);
@@ -34,7 +34,7 @@ form.addEventListener('submit', (evt) => {
 		details: form.details.value,
 	};
 
-	db.collection('todos')
+	todoDB
 		.doc()
 		.set(todo)
 		.catch((err) => console.log(err));
@@ -46,8 +46,50 @@ form.addEventListener('submit', (evt) => {
 //delete todo
 const todoContainer = document.querySelector('.todos');
 todoContainer.addEventListener('click', (evt) => {
-	if (evt.target.tagName === 'I') {
-		const id = evt.target.getAttribute('data-id');
-		db.collection('todos').doc(id).delete();
+	if (evt.target.innerText === 'delete_outline') {
+		const id = evt.target.getAttribute('data-delete-id');
+		todoDB.doc(id).delete();
+	}
+});
+
+//edit todo
+todoContainer.addEventListener('click', (evt) => {
+	if (evt.target.innerText === 'edit_outline') {
+		const todoTitle = document.querySelector('#editTitle');
+		const todoDetails = document.querySelector('#editDetails');
+		const id = evt.target.getAttribute('data-edit-id');
+		let todoCurrentValue = null;
+		todoDB
+			.doc(id)
+			.get()
+			.then((doc) => {
+				if (doc.exists) {
+					todoCurrentValue = doc.data();
+					todoTitle.value = todoCurrentValue.title;
+					todoDetails.value = todoCurrentValue.details;
+					const editForm = document.querySelector('.edit-todo');
+					editForm.addEventListener('submit', (e) => {
+						e.preventDefault();
+						//submitting edited form and updating DB
+						const updatedTodo = {
+							title: editForm.editTitle.value,
+							details: editForm.editDetails.value,
+						};
+						//updating DB
+						todoDB.doc(id).update(updatedTodo);
+						//edit-form instance and closing if after submiting
+						const editFormInstance = M.Sidenav.getInstance(
+							document.querySelector('.edit-form'),
+						);
+						editFormInstance.close();
+						location.reload();
+					});
+				} else {
+					console.log('No Such document');
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	}
 });

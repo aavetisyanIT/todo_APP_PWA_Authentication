@@ -31,7 +31,7 @@ nav .sidenav-trigger {
 	box-shadow: 0px 1px 3px rgba(90, 90, 90, 0.1);
 	display: grid;
 	grid-template-columns: 2fr 6fr 1fr;
-	grid-template-areas: 'image details delete';
+	grid-template-areas: 'span details delete';
 	position: relative;
 }
 
@@ -49,6 +49,18 @@ nav .sidenav-trigger {
 	right: 0px;
 }
 .todo-delete i {
+	font-size: 18px;
+}
+.todo-edit {
+	width: 20px;
+	height: 20px;
+	grid-area: delete;
+	position: absolute;
+	bottom: -2px;
+	right: 50px;
+}
+.todo-edit i {
+	width: 20px;
 	font-size: 18px;
 }
 .todo-title {
@@ -71,6 +83,11 @@ input {
 	background: var(--title);
 	box-shadow: 1px 1px 3px rgba(90, 90, 90, 0.2);
 }
+.edit-form button {
+	background: var(--title);
+	box-shadow: 1px 1px 3px rgba(90, 90, 90, 0.2);
+}
+
 form .input-field {
 	margin-top: 30px;
 }
