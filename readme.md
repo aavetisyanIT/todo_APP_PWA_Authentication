@@ -2,6 +2,8 @@
 
 I created this tool to help designers and developers find unique colors and striking gradient combinations. By making a tool that solely generates random colors and gradients, colors are found that would otherwise be unthought of. I hope ColorSpark becomes a useful tool in your toolkit to help spark new ideas for your next design project.
 
+![ScreenShot](https://raw.github.com/{username}/{repository}/{branch}/{path})
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -37,5 +39,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 -  Hat tip to anyone whose code was used
--  Inspiration
--  etc
