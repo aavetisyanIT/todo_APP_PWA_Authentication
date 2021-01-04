@@ -3,6 +3,7 @@
 I created this tool to help designers and developers find unique colors and striking gradient combinations. By making a tool that solely generates random colors and gradients, colors are found that would otherwise be unthought of. I hope ColorSpark becomes a useful tool in your toolkit to help spark new ideas for your next design project.
 
 ![ScreenShot](https://raw.github.com/{username}/{repository}/{branch}/{path})
+![ScreenShot](https://github.com/aavetisyanIT/todo_test_GIT/blob/master/colorpick.PNG)
 
 ## Getting Started
 
