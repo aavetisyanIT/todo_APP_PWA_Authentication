@@ -21,6 +21,7 @@ nav .sidenav-trigger {
 	margin: 0;
 }
 body {
+	/* Might need to change background
 	/* background by SVGBackgrounds.com */
 	background-color: #ffffff;
 	background-image: url('bg.svg');
@@ -98,4 +99,131 @@ input {
 
 form .input-field {
 	margin-top: 30px;
+}
+
+/* Login form */
+input[type='text'],
+input[type='password'] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+.wrapper {
+	/* Might need to change background */
+	/* background by SVGBackgrounds.com */
+	background-color: #ffffff;
+	background-image: url('bg.svg');
+	overflow: scroll;
+	display: flex;
+	justify-content: center;
+}
+button {
+	background-color: var(--title);
+	color: white;
+	padding: 14px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	border-radius: 5px;
+}
+.login-btn {
+	position: absolute;
+	width: 125px;
+	bottom: 65%;
+	border-radius: 5px;
+}
+.register-btn {
+	position: absolute;
+	width: 125px;
+	bottom: 60%;
+	border-radius: 5px;
+}
+
+button:hover {
+	opacity: 0.65;
+}
+
+.modal {
+	display: none;
+	position: absolute;
+	bottom: 50%;
+	z-index: 1;
+	width: 500px;
+	height: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+}
+
+.modal-content {
+	background-color: #fefefe;
+	border-radius: 10px;
+}
+
+.close {
+	position: absolute;
+	right: 25px;
+	top: 0;
+	color: #000;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: var(--title);
+	cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animateOpen {
+	-webkit-animation: animateopen 0.6s;
+	animation: animateopen 0.6s;
+}
+
+@-webkit-keyframes animateopen {
+	from {
+		-webkit-transform: scale(0);
+	}
+	to {
+		-webkit-transform: scale(1);
+	}
+}
+
+@keyframes animateopen {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 620px) {
+	.modal {
+		width: 400px;
+		height: auto;
+	}
+}
+@media screen and (max-width: 500px) {
+	.modal {
+		width: 300px;
+		height: auto;
+	}
+	.login-btn {
+		width: 100px;
+	}
+}
+@media screen and (max-width: 350px) {
+	.modal {
+		width: 270px;
+		height: auto;
+	}
+	.login-btn {
+		width: 85px;
+	}
 }

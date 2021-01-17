@@ -41,6 +41,110 @@
 		<meta name="theme-color" content="#FFE1C4" />
 	</head>
 	<body>
-		<h1>LOGIN</h1>
+		<div class="wrapper">
+			<button
+				onclick="document.getElementById('id01').style.display='block'"
+				class="login-btn"
+			>
+				Login
+			</button>
+			<button
+				onclick="document.getElementById('id02').style.display='block'"
+				class="register-btn"
+			>
+				Register
+			</button>
+
+			<div id="id01" class="modal">
+				<form
+					class="modal-content animateOpen"
+					action="/action_page.php"
+					method="post"
+				>
+					<div class="imgcontainer">
+						<span
+							onclick="document.getElementById('id01').style.display='none'"
+							class="close"
+							title="Close Modal"
+							>&times;</span
+						>
+					</div>
+
+					<div class="myContainer">
+						<label for="uname"><b>Username</b></label>
+						<input
+							type="text"
+							placeholder="Enter Username"
+							name="uname"
+							required
+						/>
+
+						<label for="psw"><b>Password</b></label>
+						<input
+							type="password"
+							placeholder="Enter Password"
+							name="psw"
+							required
+						/>
+
+						<!-- not displaying check box NEEDS ATTENTION -->
+						<label>
+							<input
+								type="checkbox"
+								checked="checked"
+								name="remember"
+							/>
+							Remember me
+						</label>
+
+						<button type="submit">Login</button>
+					</div>
+				</form>
+			</div>
+			<div id="id02" class="modal">
+				<form
+					class="modal-content animateOpen"
+					action="/action_page.php"
+					method="post"
+				>
+					<div class="imgcontainer">
+						<span
+							onclick="document.getElementById('id02').style.display='none'"
+							class="close"
+							title="Close Modal"
+							>&times;</span
+						>
+					</div>
+
+					<div class="myContainer">
+						<label for="uname"><b>Username</b></label>
+						<input
+							type="text"
+							placeholder="Create Username"
+							name="uname"
+							required
+						/>
+
+						<label for="psw"><b>Password</b></label>
+						<input
+							type="password"
+							placeholder="Enter Password"
+							name="psw"
+							required
+						/>
+						<label for="psw"><b>Password</b></label>
+						<input
+							type="password"
+							placeholder="Repeat Password"
+							name="psw"
+							required
+						/>
+
+						<button type="submit">Register</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="../js/login.js"></script>
 	</body>
 </html>
