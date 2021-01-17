@@ -20,6 +20,12 @@ nav a span {
 nav .sidenav-trigger {
 	margin: 0;
 }
+body {
+	/* background by SVGBackgrounds.com */
+	background-color: #ffffff;
+	background-image: url('bg.svg');
+	overflow: scroll;
+}
 
 /* todo styles */
 .todos {
@@ -47,21 +53,23 @@ nav .sidenav-trigger {
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
+	cursor: pointer;
 }
 .todo-delete i {
-	font-size: 18px;
+	font-size: 24px;
 }
 .todo-edit {
 	width: 20px;
 	height: 20px;
 	grid-area: delete;
 	position: absolute;
-	bottom: -2px;
+	bottom: 3px;
 	right: 50px;
+	cursor: pointer;
 }
 .todo-edit i {
 	width: 20px;
-	font-size: 18px;
+	font-size: 24px;
 }
 .todo-title {
 	font-weight: bold;

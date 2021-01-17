@@ -1,19 +1,41 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="/public/img/icons/icon72.png"
+		/>
 		<title>Todo App</title>
 		<!-- materialize icons, css & js -->
-		<link type="text/css" href="/css/materialize.min.css" rel="stylesheet" />
+		<link
+			type="text/css"
+			href="/public/css/materialize.min.css"
+			rel="stylesheet"
+		/>
 		<link
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet"
 		/>
-		<link type="text/css" href="/css/styles.css" rel="stylesheet" />
-		<script type="text/javascript" src="/js/materialize.min.js"></script>
-		<link rel="manifest" href="/manifest.json" />
+		<link
+			type="text/css"
+			href="/public/css/styles.css"
+			rel="stylesheet"
+		/>
+		<script
+			type="text/javascript"
+			src="/public/js/materialize.min.js"
+		></script>
+		<link rel="manifest" href="/public/manifest.json" />
 		<!-- ios support  -->
-		<link rel="apple-touch-icon" href="/img/icons/icon192.png" />
+		<link
+			rel="apple-touch-icon"
+			href="/public/img/icons/apple-icon.png"
+		/>
 		<meta name="apple-mobile-web-app-status-bar" content="#aa7700" />
 		<meta name="theme-color" content="#FFE1C4" />
 	</head>
@@ -21,9 +43,11 @@
 		<!-- top nav -->
 		<nav class="z-depth-3">
 			<div class="nav-wrapper container">
-				<a href="/">ToDo<span>Manager</span></a>
+				<a href="/public/index.html">ToDo<span>Manager</span></a>
 				<span class="right grey-text text-darken-1">
-					<i class="material-icons sidenav-trigger" data-target="side-menu"
+					<i
+						class="material-icons sidenav-trigger"
+						data-target="side-menu"
 						>menu</i
 					>
 				</span>
@@ -32,11 +56,17 @@
 		<!-- side nav -->
 		<ul id="side-menu" class="sidenav side-menu">
 			<li><a class="subheader">TODOMANAGER</a></li>
-			<li><a href="/" class="waves-effect">Home</a></li>
-			<li><a href="/pages/about.html" class="waves-effect">About</a></li>
+			<li>
+				<a href="/public/index.html" class="waves-effect">Home</a>
+			</li>
+			<li>
+				<a href="/public/pages/about.html" class="waves-effect"
+					>About</a
+				>
+			</li>
 			<li><div class="divider"></div></li>
 			<li>
-				<a href="/pages/contact.html" class="waves-effect">
+				<a href="/public/pages/contact.html" class="waves-effect">
 					<i class="material-icons">mail_outline</i>Contact</a
 				>
 			</li>
@@ -107,7 +137,7 @@
 					<label for="editDetails">Task details</label>
 				</div>
 				<div class="input-field center">
-					<button class="btn-small">Edit</button>
+					<button class="btn-small">Save</button>
 				</div>
 			</form>
 		</div>
@@ -136,8 +166,8 @@
 			const db = firebase.firestore();
 		</script>
 
-		<script src="/js/app.js"></script>
-		<script src="/js/db.js"></script>
-		<script src="/js/ui.js"></script>
+		<script src="/public/js/app.js"></script>
+		<script src="/public/js/db.js"></script>
+		<script src="/public/js/ui.js"></script>
 	</body>
 </html>

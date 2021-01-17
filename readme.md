@@ -1,41 +1,64 @@
-# ColorPick App
+# Todo Manager
 
-I created this tool to help designers and developers find unique colors and striking gradient combinations. By making a tool that solely generates random colors and gradients, colors are found that would otherwise be unthought of. I hope ColorSpark becomes a useful tool in your toolkit to help spark new ideas for your next design project.
+Todo lists don't need to be complicated — plenty of people use a pen and paper for the job without any problem.
+Todo Manager is a simple cross-platform app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
 
-![ScreenShot](https://raw.github.com/{username}/{repository}/{branch}/{path})
-![ScreenShot](https://github.com/aavetisyanIT/todo_test_GIT/blob/master/colorpick.PNG)
+This is a PWA application made with HTML, CSS, JavaScript can be accessed via a web address and installed on the mobile home-screen.
+It runs in the browser but with access to device features and can be used offline.
 
-## Getting Started
+## To install on your phone or open in the browser:
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+[Click here](https://todo-manager-11338.web.app/)
 
-### Prerequisites
+## Getting familiar
 
-What things you need to install the software and how to install them
+### Open webpage on your phone browser
 
-```
-Give examples
-```
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/home.PNG)
+
+### Install the application on your phone
+
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/homeAdd.PNG)
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/homeAdd2.PNG)
+
+### Access todo manager from homescreen
+
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/screen.PNG)
+
+### Very app like expirience
+
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/appHome.PNG)
+
+### Add new todo
+
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/appAdd.PNG)
+
+### Edit existing todo
+
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/appEdit.PNG)
+
+### Menu
+
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/appMenu.PNG)
+
+### Full offline capability
+
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/appOff.PNG)
+
+### Available on PC
+
+![](https://github.com/aavetisyanIT/TODO-APP-PWA/blob/main/public/img/screenshots/appOff.PNG)
 
 ## Built With
 
--  [React](https://reactjs.org/docs/getting-started.html) - A JavaScript library.
--  [Material-UI](https://material-ui.com) - A library of React components that implement Google's Material Design.
--  [JSS](https://cssinjs.org/?v=v10.5.0) - A library for generating Style Sheets with JavaScript.
--  [chroma.js](https://gka.github.io/chroma.js) - A lightweight JavaScript library to work with, manipulate and interact with colors.
--  [emoji-mart](https://github.com/missive/emoji-mart) - A Slack-like customizable emoji picker component for React.
--  [React Sortable HOC](https://github.com/clauderic/react-sortable-hoc) - A set of higher-order components to create a sortable list.
--  [react-copy-to-clipboard](https://github.com/clauderic/react-sortable-hoc) - A copy to clipboard React component.
--  [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) - React simple form validation component.
--  [react-transition-group](https://github.com/reactjs/react-transition-group) - React components for defining entering and exiting transitions.
+-  HTML
+-  CSS
+-  JavaScript
+-  Firebase as a database
 
 ## Authors
 
--  **Artur Avetisyan** - _Initial work_ - [PurpleBooth](https://github.com/aavetisyanIT/Color-Palette)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+-  **Artur Avetisyan** - _Initial work_ - [Code source](https://github.com/aavetisyanIT/TODO-APP-PWA)
 
 ## Acknowledgments
 
