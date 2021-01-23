@@ -20,6 +20,9 @@ nav a span {
 nav .sidenav-trigger {
 	margin: 0;
 }
+.material-icons.sidenav-trigger {
+	cursor: pointer;
+}
 body {
 	/* Might need to change background
 	/* background by SVGBackgrounds.com */
@@ -201,21 +204,56 @@ button:hover {
 		transform: scale(1);
 	}
 }
+@media screen and (min-width: 993px) {
+	.right.hide-on-med-and-down {
+		padding-right: 40px;
+	}
+}
 
-/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 993px) {
+	.container {
+		width: 80%;
+	}
+	html {
+		font-size: 14.5px;
+	}
+	.hide-on-med-and-down {
+		display: block !important;
+	}
+	#nav-mobile > li:nth-child(3) > a {
+		padding-right: 40px;
+	}
+}
+
 @media screen and (max-width: 620px) {
 	.modal {
 		width: 400px;
 		height: auto;
 	}
+	#nav-mobile > li:nth-child(3) > a {
+		padding-right: 30px;
+	}
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 515px) {
 	.modal {
 		width: 300px;
 		height: auto;
 	}
 	.login-btn {
 		width: 100px;
+	}
+	nav ul a {
+		font-size: 0.8rem;
+		padding: 0 7px;
+	}
+}
+@media screen and (max-width: 425px) {
+	#logo {
+		display: none;
+	}
+
+	.right.hide-on-med-and-down {
+		padding-right: 40px;
 	}
 }
 @media screen and (max-width: 350px) {
@@ -235,5 +273,8 @@ button:hover {
 	.todo-edit {
 		bottom: 3px;
 		right: 30px;
+	}
+	.right.hide-on-med-and-down {
+		padding-right: 15px;
 	}
 }

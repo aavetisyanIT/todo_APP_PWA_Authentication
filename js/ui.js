@@ -32,7 +32,16 @@ const renderTodo = (data, id) => {
 };
 
 // remove todo from DOM
-const removeTodo = (id) => {
+const removeTodo = id => {
 	const todo = document.querySelector(`.todo[data-delete-id=${id}]`);
 	todo.remove();
 };
+
+// setup materialize components
+document.addEventListener('DOMContentLoaded', function () {
+	var modals = document.querySelectorAll('.modal');
+	M.Modal.init(modals);
+
+	var items = document.querySelectorAll('.collapsible');
+	M.Collapsible.init(items);
+});

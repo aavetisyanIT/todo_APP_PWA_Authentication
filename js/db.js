@@ -1,5 +1,5 @@
 //offline data
-db.enablePersistence().catch((err) => {
+db.enablePersistence().catch(err => {
 	if (err.code == 'failed-precondition') {
 		//probable multiple tabs open at once
 		console.log('persistence failed');
@@ -12,8 +12,8 @@ db.enablePersistence().catch((err) => {
 const todoDB = db.collection('todos');
 
 //real-time listner
-todoDB.onSnapshot((snapshot) => {
-	snapshot.docChanges().forEach((change) => {
+todoDB.onSnapshot(snapshot => {
+	snapshot.docChanges().forEach(change => {
 		if (change.type === 'added') {
 			//add the document data to the web page
 			renderTodo(change.doc.data(), change.doc.id);
@@ -26,8 +26,8 @@ todoDB.onSnapshot((snapshot) => {
 });
 
 // add new todo
-const form = document.querySelector('form');
-form.addEventListener('submit', (evt) => {
+const form = document.querySelector('.add-todo.container.section');
+form.addEventListener('submit', evt => {
 	evt.preventDefault();
 	const todo = {
 		title: form.title.value,
@@ -37,7 +37,7 @@ form.addEventListener('submit', (evt) => {
 	todoDB
 		.doc()
 		.set(todo)
-		.catch((err) => console.log(err));
+		.catch(err => console.log(err));
 
 	form.title.value = '';
 	form.details.value = '';
@@ -45,7 +45,7 @@ form.addEventListener('submit', (evt) => {
 
 //delete todo
 const todoContainer = document.querySelector('.todos');
-todoContainer.addEventListener('click', (evt) => {
+todoContainer.addEventListener('click', evt => {
 	if (evt.target.innerText === 'delete_outline') {
 		const id = evt.target.getAttribute('data-delete-id');
 		todoDB.doc(id).delete();
@@ -53,7 +53,7 @@ todoContainer.addEventListener('click', (evt) => {
 });
 
 //edit todo
-todoContainer.addEventListener('click', (evt) => {
+todoContainer.addEventListener('click', evt => {
 	if (evt.target.innerText === 'edit_outline') {
 		const todoTitle = document.querySelector('#editTitle');
 		const todoDetails = document.querySelector('#editDetails');
@@ -62,13 +62,13 @@ todoContainer.addEventListener('click', (evt) => {
 		todoDB
 			.doc(id)
 			.get()
-			.then((doc) => {
+			.then(doc => {
 				if (doc.exists) {
 					todoCurrentValue = doc.data();
 					todoTitle.value = todoCurrentValue.title;
 					todoDetails.value = todoCurrentValue.details;
 					const editForm = document.querySelector('.edit-todo');
-					editForm.addEventListener('submit', (e) => {
+					editForm.addEventListener('submit', e => {
 						e.preventDefault();
 						//submitting edited form and updating DB
 						const updatedTodo = {
@@ -88,7 +88,7 @@ todoContainer.addEventListener('click', (evt) => {
 					console.log('No Such document');
 				}
 			})
-			.catch((err) => {
+			.catch(err => {
 				console.log(err);
 			});
 	}
