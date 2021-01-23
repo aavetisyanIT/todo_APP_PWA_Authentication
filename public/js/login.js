@@ -8,3 +8,12 @@ window.onclick = function (event) {
 		modalRegister.style.display = 'none';
 	}
 };
+//signup
+const signupForm = document.querySelector('#signup-form');
+signupForm.addEventListener('submit', evt => {
+	evt.preventDefault();
+	const email = signupForm['signup-email'].value;
+	const password = signupForm['signup-password'].value;
+
+	//sign up the user
+});
