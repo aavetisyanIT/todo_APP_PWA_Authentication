@@ -226,4 +226,14 @@ button:hover {
 	.login-btn {
 		width: 85px;
 	}
+	.todo-delete i {
+		font-size: 20px;
+	}
+	.todo-edit i {
+		font-size: 20px;
+	}
+	.todo-edit {
+		bottom: 3px;
+		right: 30px;
+	}
 }
