@@ -6,37 +6,23 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<link
-			rel="icon"
-			type="image/png"
-			href="/public/img/icons/icon72.png"
-		/>
+		<link rel="icon" type="image/png" href="/img/icons/icon72.png" />
 		<title>Todo App</title>
 		<!-- materialize icons, css & js -->
 		<link
 			type="text/css"
-			href="/public/css/materialize.min.css"
+			href="/css/materialize.min.css"
 			rel="stylesheet"
 		/>
 		<link
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet"
 		/>
-		<link
-			type="text/css"
-			href="/public/css/styles.css"
-			rel="stylesheet"
-		/>
-		<script
-			type="text/javascript"
-			src="/public/js/materialize.min.js"
-		></script>
-		<link rel="manifest" href="/public/manifest.json" />
+		<link type="text/css" href="/css/styles.css" rel="stylesheet" />
+		<script type="text/javascript" src="/js/materialize.min.js"></script>
+		<link rel="manifest" href="/manifest.json" />
 		<!-- ios support  -->
-		<link
-			rel="apple-touch-icon"
-			href="/public/img/icons/apple-icon.png"
-		/>
+		<link rel="apple-touch-icon" href="/img/icons/apple-icon.png" />
 		<meta name="apple-mobile-web-app-status-bar" content="#aa7700" />
 		<meta name="theme-color" content="#FFE1C4" />
 	</head>
@@ -56,7 +42,12 @@
 			</button>
 
 			<div id="id01" class="modal">
-				<form id="lognin-form" class="modal-content animateOpen">
+				<form
+					id="lognin-form"
+					class="modal-content animateOpen"
+					method="get"
+					action="/index.html"
+				>
 					<div class="imgcontainer">
 						<span
 							onclick="document.getElementById('id01').style.display='none'"
@@ -98,7 +89,12 @@
 				</form>
 			</div>
 			<div id="id02" class="modal">
-				<form id="signup-form" class="modal-content animateOpen">
+				<form
+					id="signup-form"
+					class="modal-content animateOpen"
+					method="POST"
+					action="/index.html"
+				>
 					<div class="imgcontainer">
 						<span
 							onclick="document.getElementById('id02').style.display='none'"
