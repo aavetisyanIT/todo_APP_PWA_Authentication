@@ -29,3 +29,14 @@ logout.addEventListener('click', evt => {
 
 // login user
 const loginForm = document.querySelector('#login-form');
+loginForm.addEventListener('submit', evt => {
+	evt.preventDefault();
+	const email = loginForm['login-email'].value;
+	const password = loginForm['login-password'].value;
+	auth.signInWithEmailAndPassword(email, password)
+		.then(cred => console.log('User is logged in'))
+		.catch(err => console.log(err.message));
+	const modal = document.querySelector('#modal-login');
+	M.Modal.getInstance(modal).close();
+	loginForm.reset();
+});
