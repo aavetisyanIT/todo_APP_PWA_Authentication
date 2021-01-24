@@ -149,23 +149,6 @@ button:hover {
 	opacity: 0.65;
 }
 
-.modal {
-	display: none;
-	position: absolute;
-	bottom: 50%;
-	z-index: 1;
-	width: 500px;
-	height: auto;
-	background-color: rgb(0, 0, 0);
-	background-color: rgba(0, 0, 0, 0.4);
-	border-radius: 10px;
-}
-
-.modal-content {
-	background-color: #fefefe;
-	border-radius: 10px;
-}
-
 .close {
 	position: absolute;
 	right: 25px;
@@ -181,29 +164,20 @@ button:hover {
 	cursor: pointer;
 }
 
-/* Add Zoom Animation */
-.animateOpen {
-	-webkit-animation: animateopen 0.6s;
-	animation: animateopen 0.6s;
+/* Hide nav buttons, add button, loggin message when page reloads  */
+.logged-in {
+	display: none;
+}
+.logged-out {
+	display: none;
+}
+#add-btn {
+	display: none;
+}
+#logout-msg {
+	display: none;
 }
 
-@-webkit-keyframes animateopen {
-	from {
-		-webkit-transform: scale(0);
-	}
-	to {
-		-webkit-transform: scale(1);
-	}
-}
-
-@keyframes animateopen {
-	0% {
-		transform: scale(0);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
 @media screen and (min-width: 993px) {
 	.right.hide-on-med-and-down {
 		padding-right: 40px;
@@ -226,19 +200,11 @@ button:hover {
 }
 
 @media screen and (max-width: 620px) {
-	.modal {
-		width: 400px;
-		height: auto;
-	}
 	#nav-mobile > li:nth-child(3) > a {
 		padding-right: 30px;
 	}
 }
 @media screen and (max-width: 515px) {
-	.modal {
-		width: 300px;
-		height: auto;
-	}
 	.login-btn {
 		width: 100px;
 	}
@@ -257,10 +223,6 @@ button:hover {
 	}
 }
 @media screen and (max-width: 350px) {
-	.modal {
-		width: 270px;
-		height: auto;
-	}
 	.login-btn {
 		width: 85px;
 	}

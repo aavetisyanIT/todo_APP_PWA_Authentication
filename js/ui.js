@@ -11,6 +11,26 @@ document.addEventListener('DOMContentLoaded', function () {
 	M.Sidenav.init(editForm, { edge: 'left' });
 });
 
+const loggedOutLinks = document.querySelectorAll('.logged-out');
+const loggedInLinks = document.querySelectorAll('.logged-in');
+const addButton = document.querySelector('#add-btn');
+
+const setupUI = user => {
+	if (user) {
+		//toggle top nav buttons
+		loggedInLinks.forEach(item => (item.style.display = 'block'));
+		loggedOutLinks.forEach(item => (item.style.display = 'none'));
+		//show add-todo button
+		addButton.style.display = 'block';
+	} else {
+		//toggle top nav buttons
+		loggedInLinks.forEach(item => (item.style.display = 'none'));
+		loggedOutLinks.forEach(item => (item.style.display = 'block'));
+		//hide add-todo button
+		addButton.style.display = 'none';
+	}
+};
+
 //render todo data
 const renderTodo = (data = {}, id = {}) => {
 	if (data.title) {

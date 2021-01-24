@@ -13,7 +13,6 @@ const todoDB = db.collection('todos');
 
 //listen for auth status chages
 auth.onAuthStateChanged(user => {
-	const addButton = document.querySelector('#add-btn');
 	//if user is logged in
 	if (user) {
 		//real-time listner
@@ -29,13 +28,12 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 		});
-		//show add-todo button
-		addButton.style.display = 'block';
+
+		setupUI(user);
 		//use is logged off
 	} else {
 		renderTodo();
-		//hide add-todo button
-		addButton.style.display = 'none';
+		setupUI();
 	}
 });
 
