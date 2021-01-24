@@ -41,6 +41,9 @@
 				</span>
 				<!-- Login, Logout, SignUp buttons -->
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li class="logged-in" >
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+          </li>
           <li class="logged-in">
             <a href="#" class="grey-text" id="logout">Logout</a>
           </li>
@@ -91,6 +94,14 @@
       </form>
     </div>
 	</div>
+
+	  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+    </div>
+  </div>
 
 		<!-- side nav -->
 		<ul id="side-menu" class="sidenav side-menu">

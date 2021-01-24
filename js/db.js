@@ -28,10 +28,11 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 		});
-
+		//updating UI
 		setupUI(user);
 		//use is logged off
 	} else {
+		//updating UI
 		renderTodo();
 		setupUI();
 	}
