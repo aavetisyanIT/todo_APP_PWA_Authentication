@@ -15,6 +15,7 @@ const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const addButton = document.querySelector('#add-btn');
 const accountDetails = document.querySelector('.account-details');
+const loggedoutMessage = document.querySelector('#logout-msg');
 
 const setupUI = user => {
 	if (user) {
@@ -28,6 +29,7 @@ const setupUI = user => {
 		loggedOutLinks.forEach(item => (item.style.display = 'none'));
 		//show add-todo button
 		addButton.style.display = 'block';
+		loggedoutMessage.style.display = 'none';
 	} else {
 		//hide account info
 		accountDetails.innerHTML = '';

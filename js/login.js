@@ -10,12 +10,14 @@ signupForm.addEventListener('submit', evt => {
 	//sign up the user
 	auth.createUserWithEmailAndPassword(email, password)
 		.then(cred => {
-			console.log('User is signed up and logged in');
+			return db.collection(cred.user.uid).doc(cred.user.uid);
+		})
+		.then(() => {
+			const modal = document.querySelector('#modal-signup');
+			M.Modal.getInstance(modal).close();
+			signupForm.reset();
 		})
 		.catch(err => console.log(err.message));
-	const modal = document.querySelector('#modal-signup');
-	M.Modal.getInstance(modal).close();
-	signupForm.reset();
 });
 
 //logout user
