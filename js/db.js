@@ -11,18 +11,32 @@ db.enablePersistence().catch(err => {
 
 const todoDB = db.collection('todos');
 
-//real-time listner
-todoDB.onSnapshot(snapshot => {
-	snapshot.docChanges().forEach(change => {
-		if (change.type === 'added') {
-			//add the document data to the web page
-			renderTodo(change.doc.data(), change.doc.id);
-		}
-		if (change.type === 'removed') {
-			//remove the document data from the web page
-			removeTodo(change.doc.id);
-		}
-	});
+//listen for auth status chages
+auth.onAuthStateChanged(user => {
+	const addButton = document.querySelector('#add-btn');
+	//if user is logged in
+	if (user) {
+		//real-time listner
+		todoDB.onSnapshot(snapshot => {
+			snapshot.docChanges().forEach(change => {
+				if (change.type === 'added') {
+					//add the document data to the web page
+					renderTodo(change.doc.data(), change.doc.id);
+				}
+				if (change.type === 'removed') {
+					//remove the document data from the web page
+					removeTodo(change.doc.id);
+				}
+			});
+		});
+		//show add-todo button
+		addButton.style.display = 'block';
+		//use is logged off
+	} else {
+		renderTodo();
+		//hide add-todo button
+		addButton.style.display = 'none';
+	}
 });
 
 // add new todo

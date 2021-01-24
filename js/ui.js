@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //render todo data
-const renderTodo = (data, id) => {
-	const html = `
+const renderTodo = (data = {}, id = {}) => {
+	if (data.title) {
+		const html = `
 		<div class="card-panel todo white row" data-delete-id="${id}">
 			<span class="material-icons"> fiber_manual_record </span>
 			<div class="todo-details">
@@ -28,7 +29,11 @@ const renderTodo = (data, id) => {
 			</div>
 		</div>
 	`;
-	todos.innerHTML += html;
+		todos.innerHTML += html;
+		document.querySelector('#logout-msg').style.display = 'none';
+	} else {
+		document.querySelector('#logout-msg').style.display = 'block';
+	}
 };
 
 // remove todo from DOM

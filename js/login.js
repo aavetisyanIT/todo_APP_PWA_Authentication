@@ -10,7 +10,7 @@ signupForm.addEventListener('submit', evt => {
 	//sign up the user
 	auth.createUserWithEmailAndPassword(email, password)
 		.then(cred => {
-			console.log('Logged in');
+			console.log('User is signed up and logged in');
 		})
 		.catch(err => console.log(err.message));
 	const modal = document.querySelector('#modal-signup');
@@ -25,6 +25,7 @@ logout.addEventListener('click', evt => {
 	auth.signOut()
 		.then(() => console.log('User signed out'))
 		.catch(err => console.log(err.message));
+	window.location.reload();
 });
 
 // login user
