@@ -16,8 +16,11 @@ signupForm.addEventListener('submit', evt => {
 			const modal = document.querySelector('#modal-signup');
 			M.Modal.getInstance(modal).close();
 			signupForm.reset();
+			signupForm.querySelector('.error').innerHTML = '';
 		})
-		.catch(err => console.log(err.message));
+		.catch(err => {
+			signupForm.querySelector('.error').innerHTML = err.message;
+		});
 });
 
 //logout user
@@ -37,9 +40,13 @@ loginForm.addEventListener('submit', evt => {
 	const email = loginForm['login-email'].value;
 	const password = loginForm['login-password'].value;
 	auth.signInWithEmailAndPassword(email, password)
-		.then(cred => console.log('User is logged in'))
-		.catch(err => console.log(err.message));
-	const modal = document.querySelector('#modal-login');
-	M.Modal.getInstance(modal).close();
-	loginForm.reset();
+		.then(cred => {
+			const modal = document.querySelector('#modal-login');
+			M.Modal.getInstance(modal).close();
+			loginForm.reset();
+			loginForm.querySelector('.error').innerHTML = '';
+		})
+		.catch(err => {
+			loginForm.querySelector('.error').innerHTML = err.message;
+		});
 });
